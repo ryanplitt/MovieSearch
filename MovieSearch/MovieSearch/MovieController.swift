@@ -10,4 +10,12 @@ import Foundation
 
 class MovieController {
     
+    static let apiKey: String = {
+        let filepath = Bundle.main.url(forResource: "APIKey", withExtension: "plist")!
+        let dic = NSDictionary(contentsOf: filepath) as! [String : String]
+        return dic["APIKey"]!
+    }()
+    
+    
+    
 }
