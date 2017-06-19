@@ -17,6 +17,7 @@
 		FB8C5DCA1EF8218F00C502BC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8C5DC91EF8218F00C502BC /* Movie.swift */; };
 		FB8C5DCC1EF821A200C502BC /* MovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8C5DCB1EF821A200C502BC /* MovieController.swift */; };
 		FB8C5DCE1EF82F0B00C502BC /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB8C5DCD1EF82F0B00C502BC /* APIKey.plist */; };
+		FB8C5DD01EF831FE00C502BC /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8C5DCF1EF831FE00C502BC /* NetworkController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FB8C5DC91EF8218F00C502BC /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		FB8C5DCB1EF821A200C502BC /* MovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieController.swift; sourceTree = "<group>"; };
 		FB8C5DCD1EF82F0B00C502BC /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
+		FB8C5DCF1EF831FE00C502BC /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				FB8C5DC31EF81FDA00C502BC /* MovieSearchTableViewController.swift */,
 				FB8C5DC91EF8218F00C502BC /* Movie.swift */,
 				FB8C5DCB1EF821A200C502BC /* MovieController.swift */,
+				FB8C5DCF1EF831FE00C502BC /* NetworkController.swift */,
 				FB8C5DCD1EF82F0B00C502BC /* APIKey.plist */,
 				FB8C5DC51EF81FE500C502BC /* MovieDetailViewController.swift */,
 				FB8C5DC71EF81FF500C502BC /* MovieTableViewCell.swift */,
@@ -156,6 +159,7 @@
 				FB8C5DC61EF81FE500C502BC /* MovieDetailViewController.swift in Sources */,
 				FB8C5DC81EF81FF500C502BC /* MovieTableViewCell.swift in Sources */,
 				FB8C5DB21EF81EC200C502BC /* AppDelegate.swift in Sources */,
+				FB8C5DD01EF831FE00C502BC /* NetworkController.swift in Sources */,
 				FB8C5DCA1EF8218F00C502BC /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

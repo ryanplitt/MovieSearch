@@ -12,12 +12,10 @@ class MovieSearchTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        MovieController.searchFor(searchTerm: "Batman") { (movies) in
+            print(movies.filter({ $0.releaseDate != nil }))
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -44,10 +44,10 @@ struct Result: Decodable {
 struct Movie: Decodable {
     let title: String
     let popularity: Double
-    let imagePath: String
-    let releaseDate: Date
+    let imagePath: String?
+    let releaseDate: Date?
     let description: String
-    let backdropPath: String
+    let backdropPath: String?
     
     enum MovieKeys: String, CodingKey {
         case title
@@ -62,9 +62,9 @@ struct Movie: Decodable {
         let container = try decoder.container(keyedBy: MovieKeys.self)
         title = try container.decode(String.self, forKey: .title)
         popularity = try container.decode(Double.self, forKey: .popularity)
-        imagePath = try container.decode(String.self, forKey: .imagePath)
-        releaseDate = try container.decode(Date.self, forKey: .releaseDate)
+        imagePath = try? container.decode(String.self, forKey: .imagePath)
+        releaseDate = try? container.decode(Date.self, forKey: .releaseDate)
         description = try container.decode(String.self, forKey: .description)
-        backdropPath = try container.decode(String.self, forKey: .backdropPath)
+        backdropPath = try? container.decode(String.self, forKey: .backdropPath)
     }
 }

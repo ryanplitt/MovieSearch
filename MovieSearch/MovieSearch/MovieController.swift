@@ -16,6 +16,30 @@ class MovieController {
         return dic["APIKey"]!
     }()
     
+    static let baseURL = URL(string: "https://api.themoviedb.org/3/search/movie")!
     
+    static func searchFor(searchTerm: String, completion: @escaping ([Movie]) -> Void) {
+        
+        let params = ["api_key": apiKey, "query" : searchTerm]
+        
+        NetworkController.performRequest(for: baseURL, httpMethod: .Get, urlParameters: params, body: nil) { (data, error) in
+            
+            guard let data = data else { completion([]) ; return }
+            
+            let jsonDecoder = JSONDecoder()
+            jsonDecoder.dateDecodingStrategy = .formatted(formater)
+            
+            let result = try! jsonDecoder.decode(Result.self, from: data)
+            completion(result.movies)
+        }
+        
+    }
     
+    static let formater: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter
+    }()
 }
+
