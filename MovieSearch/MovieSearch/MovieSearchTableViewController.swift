@@ -8,43 +8,54 @@
 
 import UIKit
 
-class MovieSearchTableViewController: UITableViewController {
+class MovieSearchTableViewController: UITableViewController, UISearchBarDelegate {
 
+    @IBAction func dosomething(_ sender: Any) {
+        self.tableView.reloadData()
+    }
+    @IBOutlet weak var movieSearchBar: UISearchBar!
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        MovieController.searchFor(searchTerm: "Batman") { (movies) in
-            print(movies.filter({ $0.releaseDate != nil }))
+        tableView.estimatedRowHeight = 100
+    }
+    
+    var movies = [Movie]() {
+        didSet{
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
+        MovieController.searchFor(searchTerm: searchTerm) { (movies) in
+            self.movies = movies
+        }
     }
-
+    
+    
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return movies.count
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieTableViewCell
+        
+        let movie = movies[indexPath.row]
+        cell.movie = movie
 
         return cell
     }
-    */
-
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

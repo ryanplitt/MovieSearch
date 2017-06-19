@@ -41,5 +41,14 @@ class MovieController {
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
+    
+    static func fetchImageData(for movie: Movie, completion: @escaping (Data?) -> Void) {
+        guard let url = URL(string: "https://image.tmdb.org/t/p/w500"), let imagePath = movie.imagePath else { completion(nil) ; return }
+        let searchURL = url.appendingPathComponent(imagePath)
+        NetworkController.performRequest(for: searchURL, httpMethod: .Get, urlParameters: nil, body: nil) { (data, error) in
+            completion(data)
+            return
+        }
+    }
 }
 
