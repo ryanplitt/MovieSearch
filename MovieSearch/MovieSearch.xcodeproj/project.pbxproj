@@ -16,6 +16,7 @@
 		FB8C5DC81EF81FF500C502BC /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8C5DC71EF81FF500C502BC /* MovieTableViewCell.swift */; };
 		FB8C5DCA1EF8218F00C502BC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8C5DC91EF8218F00C502BC /* Movie.swift */; };
 		FB8C5DCC1EF821A200C502BC /* MovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8C5DCB1EF821A200C502BC /* MovieController.swift */; };
+		FB8C5DCE1EF82F0B00C502BC /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB8C5DCD1EF82F0B00C502BC /* APIKey.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FB8C5DC71EF81FF500C502BC /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		FB8C5DC91EF8218F00C502BC /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		FB8C5DCB1EF821A200C502BC /* MovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieController.swift; sourceTree = "<group>"; };
+		FB8C5DCD1EF82F0B00C502BC /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				FB8C5DC31EF81FDA00C502BC /* MovieSearchTableViewController.swift */,
 				FB8C5DC91EF8218F00C502BC /* Movie.swift */,
 				FB8C5DCB1EF821A200C502BC /* MovieController.swift */,
+				FB8C5DCD1EF82F0B00C502BC /* APIKey.plist */,
 				FB8C5DC51EF81FE500C502BC /* MovieDetailViewController.swift */,
 				FB8C5DC71EF81FF500C502BC /* MovieTableViewCell.swift */,
 				FB8C5DB81EF81EC200C502BC /* Assets.xcassets */,
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB8C5DBC1EF81EC200C502BC /* LaunchScreen.storyboard in Resources */,
+				FB8C5DCE1EF82F0B00C502BC /* APIKey.plist in Resources */,
 				FB8C5DB91EF81EC200C502BC /* Assets.xcassets in Resources */,
 				FB8C5DB71EF81EC200C502BC /* Main.storyboard in Resources */,
 			);
